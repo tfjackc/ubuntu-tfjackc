@@ -16,6 +16,13 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import include, path
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
+from django.views.generic import TemplateView
+from rest_framework import routers
+from portfolio.api import DgcViewSet, InfoViewSet
+
+router = routers.DefaultRouter()
+router.register(r'dgc_courses', DgcViewSet)
+router.register(r'contact_info', InfoViewSet)
 
 urlpatterns = [
    # path('namaste/', include('namaste.urls')),
@@ -23,6 +30,9 @@ urlpatterns = [
     path('portfolio/', include('portfolio.urls')),
     path('discgolf/', include('discgolf.urls')),
     path('admin/', admin.site.urls),
+    path('', include(router.urls)),
+    path('api-auth/', include('rest_framework.urls')),
+    path('discgolf/react/', TemplateView.as_view(template_name='index.html'))
 ]
 
 urlpatterns += staticfiles_urlpatterns()

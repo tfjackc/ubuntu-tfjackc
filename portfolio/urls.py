@@ -3,7 +3,9 @@ from . import views
 from django.views.generic import TemplateView
 from portfolio.views import FoliumView
 
+
 appname = 'portfolio'
+
 
 urlpatterns = [
     path('jhc/', views.base, name='base'),
@@ -15,3 +17,6 @@ urlpatterns = [
     path('jhc/notebook/', views.notebook, name='notebook'),
     path('jhc/usgs_leaflet/', views.usgs, name='usgs')
 ]
+
+
+

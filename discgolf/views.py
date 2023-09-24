@@ -1,4 +1,6 @@
 from django.shortcuts import render
+from rest_framework.response import Response
+from rest_framework.decorators import api_view
 from portfolio.models import DiscgolfCourses
 from django.core.serializers import serialize
 import pandas as pd
@@ -33,3 +35,9 @@ def disc_golf_page(request):
         'dgc_data': states
     }
     return render(request, 'discgolf/index.html', context)
+
+# @api_view(['GET'])
+# def getRoutes(request):
+#
+
+
