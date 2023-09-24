@@ -1,0 +1,27 @@
+{% extends 'pats/base.html' %}
+{% load static %}
+{% load humanize %}
+{% load django_bootstrap5 %}
+{% bootstrap_css %}
+{% bootstrap_javascript %}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.5/font/bootstrap-icons.min.css" integrity="sha512-ZnR2wlLbSbr8/c9AgLg3jQPAattCUImNsae6NHYnS9KrIwRdcY9DxFotXhNAKIKbAXlRnujIqUWoXXwqyFOeIQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+{% block content %}
+  {% for feature in data.features %}
+{% include 'pats/navbarSearch.html' %}
+<div class="container-fluid">
+    <div class="row flex-nowrap">
+        <div class="col-auto col-md-3 col-xl-2 px-sm-2 px-0 bg-dark">
+            <div class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 text-white min-vh-100">
+                {% include 'pats/sidebarList.html' %}
+            </div>
+        </div>
+        <div class="col py-3">
+{% for i in maptaxlot %}
+{% include 'pats/surveyMap.html' %}
+{% endfor %}
+            <!-- insert survey map here -->
+</div>
+</div>
+</div>
+{% endfor %}
+{% endblock %}

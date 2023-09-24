@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+{% load leaflet_tags %}
+{% load static %}
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+{% load humanize %}
+{% load django_bootstrap5 %}
+{% bootstrap_css %}
+{% bootstrap_javascript %}
+{% load widget_tweaks %}
+    <title>Disc Golf App</title>
+</head>
+<body>
+<nav class="navbar navbar-dark bg-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#"><h1>Disc Golf Courses</h1></a>
+  </div>
+</nav>
+
+ <label>Select State:</label>
+<select id="states">
+{% for i in dgc_data %}
+<!--{{ i.state | safe }}-->
+  <option value="{{ i.state | safe }}">{{ i.state | safe}}</option>
+{% endfor %}
+</select>
+{{ map | safe }}
+</body>
+</html>
