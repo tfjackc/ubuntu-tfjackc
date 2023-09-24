@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+{% load humanize %}
+{% load django_bootstrap5 %}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.5/font/bootstrap-icons.min.css" integrity="sha512-ZnR2wlLbSbr8/c9AgLg3jQPAattCUImNsae6NHYnS9KrIwRdcY9DxFotXhNAKIKbAXlRnujIqUWoXXwqyFOeIQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+{% bootstrap_css %}
+{% bootstrap_javascript %}
+<!--jQuery-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js" integrity="sha512-pumBsjNRGGqkPzKHndZMaAG+bir374sORyzM3uulLV14lN5LyykqNk8eEeUlUkB3U0M4FApyaHraT65ihJhDpQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<link href="https://unpkg.com/bootstrap-table@1.21.4/dist/bootstrap-table.min.css" rel="stylesheet">
+<script src="https://unpkg.com/bootstrap-table@1.21.4/dist/bootstrap-table.min.js"></script>
+<link rel="stylesheet" href="{% static 'pats/patsmain.css' %}">
+<title>Crook County Property Assessment & Taxation Search</title>
+</head>
+  <body>
+    <nav class="navbar navbar-expand-md bg-body-tertiary header">
+      <div class="container-fluid">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <a class="navbar-brand" href="{% url 'index' %}"><div id="title">Crook County Property Information</div><div id="subtitle">Property Assessment & Taxation Search</div></a>
+            <li class="nav-item dropdown banner-btn">
+              <a class="nav-link dropdown-toggle nav-link-header" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Other Tools
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Crook County Web Map</a></li>
+                <li><a class="dropdown-item" href="#">Survey Research Tool</a></li>
+                <li><a class="dropdown-item" href="#">Tax Maps</a></li>
+              </ul>
+            </li>
+            <li class="nav-item dropdown banner-btn">
+              <a class="nav-link dropdown-toggle nav-link-header" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Other Links
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Crook County Website</a></li>
+                <li><a class="dropdown-item" href="#">Pay Taxes</a></li>
+                <li><a class="dropdown-item" href="#">Contact Us</a></li>
+              </ul>
+            </li>
+      </div>
+    </nav>
+    <img src="{% static 'pats/logo.png' %}" alt="" width="150" height="150" class="logo">
+  
+    {% block content %}
+    {% endblock %}
+
+    <div id="footer">© 2023 - CROOK COUNTY. All rights reserved. Disclaimer | Privacy | Help | Contact Us</div>
+  </body>
+</html>
+

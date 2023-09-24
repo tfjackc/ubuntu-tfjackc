@@ -1,0 +1,90 @@
+{% extends 'portfolio/base.html' %}
+
+{% load leaflet_tags %}
+{% load static %}
+{% load humanize %}
+{% load django_bootstrap5 %}
+{% bootstrap_css %}
+{% bootstrap_javascript %}
+{% load widget_tweaks %}
+<!-- Importing Leaflet CSS and JS libraries -->
+{% leaflet_js %}
+{% leaflet_css %}
+
+<link rel="stylesheet" href="{% static 'portfolio/jhcstyle.css' %}">
+{% block mainpage %}
+<div id="pagebody" style="background-image: url(&quot;{% static 'portfolio/viz.tin_hillshade_crop.jpg' %}&quot;);">
+<div class="card mb-3" style="max-width: 600px;">
+  <div class="row g-0">
+    <div class="col-md-5">
+      <img src="{% static 'portfolio/gjmachine.png' %}" class="img-fluid rounded-start" style="height: 100%;">
+    </div>
+    <div class="col-md-7">
+      <div class="card-body">
+        <h5 class="card-title">GeoJSON Machine</h5>
+        <p class="card-text">Create geospatial data on the fly and export through your browser. Pure Python.</p>
+        <a class="btn btn-dark" href="{% url 'foliumMap' %}" role="button">App</a>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="card mb-3" style="max-width: 600px;">
+  <div class="row g-0">
+    <div class="col-md-5">
+      <img src="{% static 'portfolio/cc_patsmap.png' %}" class="img-fluid rounded-start" style="height: 100%;">
+    </div>
+    <div class="col-md-7">
+      <div class="card-body">
+        <h5 class="card-title">Crook County Property Information</h5>
+        <p class="card-text">Explore central Oregon's property information with this interactive map powered by the ArcGIS JavaScript SDK.</p>
+        <a class="btn btn-dark" href="{% url 'patsMapPage' %}" role="button">App</a>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="card mb-3" style="max-width: 600px;">
+  <div class="row g-0">
+    <div class="col-md-5">
+      <img src="{% static 'portfolio/geoapp.png' %}" class="img-fluid rounded-start" style="height: 100%;">
+    </div>
+    <div class="col-md-7">
+      <div class="card-body">
+        <h5 class="card-title">USGS Earthquakes</h5>
+        <p class="card-text">R Shiny Application with the ability to analyze spatial clusters via DBSCAN.</p>
+        <a class="btn btn-dark" href="https://pnw-geo.shinyapps.io/geoapp/" role="button">App</a>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="card mb-3" style="max-width: 600px;">
+  <div class="row g-0">
+    <div class="col-md-5">
+      <img src="{% static 'portfolio/okieR.png' %}" class="img-fluid rounded-start" style="height: 100%;">
+    </div>
+    <div class="col-md-7">
+      <div class="card-body">
+        <h5 class="card-title">Tornado Alley</h5>
+        <p class="card-text">Spatial data visualization within the R ecosystem.</p>
+        <a class="btn btn-dark" href="{% url 'notebook' %}" role="button">R Notebook</a>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="card mb-3" style="max-width: 600px;">
+  <div class="row g-0">
+    <div class="col-md-5">
+      <img src="{% static 'portfolio/portalMap.png' %}" class="img-fluid rounded-start" style="height: 100%;">
+    </div>
+    <div class="col-md-7">
+      <div class="card-body">
+        <h5 class="card-title">ArcGIS Enterprise - Content Viewer</h5>
+        <p class="card-text">Network diagrams for visualizing the web map to layer relationships for an enterprise scale environment. Built on Solara.</p>
+        <a class="btn btn-dark" href="https://tfjackc-cc-gis-portal.hf.space/" role="button">App</a>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+
+{% endblock mainpage %}
