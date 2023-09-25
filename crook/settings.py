@@ -53,7 +53,8 @@ INSTALLED_APPS = [
     "leaflet",
     "django_bootstrap5",
     "widget_tweaks",
-    "rest_framework"
+    "rest_framework",
+    "rest_framework_gis"
 ]
 
 MIDDLEWARE = [
