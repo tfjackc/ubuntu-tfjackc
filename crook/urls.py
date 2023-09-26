@@ -29,6 +29,7 @@ urlpatterns = [
     path('pats/', include('pats.urls')),
     path('portfolio/', include('portfolio.urls')),
     path('discgolf/', include('discgolf.urls')),
+    path('namaste/', include('namaste.urls')),
     path('admin/', admin.site.urls),
     path('', include(router.urls)),
     path('api-auth/', include('rest_framework.urls')),
