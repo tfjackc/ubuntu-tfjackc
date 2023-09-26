@@ -13,14 +13,11 @@
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 5vh;
-  display: flex;
-  padding-left: 10px;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
+/*.navbar-brand {*/
+/*  padding-left: 10px;*/
+/*  font-size: calc(10px + 2vmin);*/
+/*  color: white;*/
+/*}*/
 
 .App-link {
   color: #61dafb;
@@ -44,7 +41,7 @@ h1 {
   margin: 1px;
 }
 
-.dropdown-container {
+.navbar-collapse.collapse {
   font-size: 15px;
   /*position: fixed;*/
   /*top: calc(5vh + 5px); !* Adjust the value to your desired spacing *!*/
@@ -54,4 +51,10 @@ h1 {
   /*padding: 10px; !* Optional: Add padding for better styling *!*/
   /*border: 1px solid #000000; !* Optional: Add a border for better styling *!*/
   width: 200px;
+}
+
+.container {
+  margin-left: 0px;
+  margin-right: 0px;
+  max-width: none;
 }

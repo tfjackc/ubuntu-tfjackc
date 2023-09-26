@@ -5,7 +5,8 @@ import Select from 'react-select';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-import NavDropdown from 'react-bootstrap/NavDropdown';
+import Button from 'react-bootstrap/Button';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import axios from 'axios';
 import 'leaflet/dist/leaflet.css'; // Import Leaflet CSS
 import './App.css';
@@ -62,14 +63,12 @@ function App() {
   return (
 
     <div className="App">
-            <Navbar expand="lg" className="bg-body-tertiary">
+            <Navbar expand="lg" className="bg-body-tertiary" bg="dark" data-bs-theme="dark">
       <Container>
-        <Navbar.Brand href="#home">React-Bootstrap</Navbar.Brand>
+        <Navbar.Brand href="#home"><h2>Disc Golf Courses</h2></Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
-        <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="me-auto">
-            <Nav.Link href="#home">Home</Nav.Link>
-            <Nav.Link href="#link">Link</Nav.Link>
+        <Navbar.Collapse id="basic-navbar-nav" className="justify-content-end">
+
            <Select
           options={optionList}
           placeholder="Select State"
@@ -77,23 +76,10 @@ function App() {
           onChange={handleSelect}
           isSearchable={true}
         />
-          </Nav>
+
         </Navbar.Collapse>
       </Container>
     </Navbar>
-  );
-      <header className="App-header">
-        <h1>Disc Golf Courses</h1>
-      </header>
-      <div className="dropdown-container">
-        <Select
-          options={optionList}
-          placeholder="Select State"
-          value={selectedOptions}
-          onChange={handleSelect}
-          isSearchable={true}
-        />
-      </div>
       {geojsonData && (
        <MapContainer center={[39.82, -98.58]} zoom={5} scrollWheelZoom={true}>
           <TileLayer
@@ -128,10 +114,7 @@ function App() {
       ]}
       icon={customIcon}
     >
-      <Popup>
-        Course: {feature.properties.name} <br />
-        {feature.properties.state}
-      </Popup>
+      <Popup>{feature.properties.name}</Popup>
     </Marker>
   ))
 )}
